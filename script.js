@@ -81,25 +81,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Mostrar el carrito dentro del modal
     function mostrarCarrito() {
-        const carritoContainer = document.querySelector("#contenido-carrito");
+        const carritoContainer = document.querySelector(".carrito-container");
         const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
+    
         carritoContainer.innerHTML = carrito.length
             ? carrito.map((producto) => `
                 <div class="carrito-item">
-                    <h3>${producto.nombre}</h3>
-                    <p>Precio: $${producto.precio}</p>
-                    <p>Cantidad: 
-                        <button class="decrementar" data-id="${producto.id}">-</button>
-                        ${producto.cantidad}
-                        <button class="incrementar" data-id="${producto.id}">+</button>
-                    </p>
-                    <button class="eliminar" data-id="${producto.id}">Eliminar</button>
+                    <img src="${producto.imagen}" alt="Imagen de ${producto.nombre}" width="50" height="50" style="border-radius: 5px;">
+                    <div>
+                        <h3>${producto.nombre}</h3>
+                        <p>Precio: $${producto.precio}</p>
+                        <p>Cantidad: 
+                            <button class="decrementar" data-id="${producto.id}">-</button>
+                            ${producto.cantidad}
+                            <button class="incrementar" data-id="${producto.id}">+</button>
+                        </p>
+                        <button class="eliminar" data-id="${producto.id}">Eliminar</button>
+                    </div>
                 </div>
             `).join("")
             : "<p>El carrito está vacío.</p>";
-
-        // Agregar eventos a los botones del carrito
+    
+        // Agregar eventos a los botones
         document.querySelectorAll(".incrementar").forEach((boton) =>
             boton.addEventListener("click", (e) => editarCantidad(e.target.dataset.id, 1))
         );
