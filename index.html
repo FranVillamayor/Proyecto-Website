@@ -13,22 +13,29 @@
 
 </head>
 <body>
+    
     <header>
-        <h1>Bienvenido a Convide Rutero</h1>
-    </header>
+        <nav>
+            <div class="logo">
+                <a href="#">Convide Rutero</a>
+            </div>
 
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#reseñas">Reseñas</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-            <button id="abrir-carrito" class="btn-carrito">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span id="cantidad-carrito">(0)</span>
+            <!-- Menú hamburguesa (sólo visible en pantallas pequeñas) -->
+            <button class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
             </button>
-    </nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#reseñas">Reseñas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <button id="abrir-carrito" class="btn-carrito">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cantidad-carrito">(0)</span>
+            </button>
+        </nav>
+    </header>
 
 
     <main>

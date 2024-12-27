@@ -63,6 +63,13 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
+    //Para abrir y cerrar el menú en dispositivos móviles
+document.getElementById('menu-toggle').addEventListener('click', () => {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+});
+
+
     // Agregar producto al carrito
     function agregarAlCarrito(productoId) {
         let carrito = JSON.parse(localStorage.getItem("carrito")) || [];

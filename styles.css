@@ -31,63 +31,80 @@ header, nav, footer {
     padding: 1em;
 }
 
-/* Estilos para la navegación */
+/* Estilos básicos para el Navbar */
 nav {
     display: flex;
-    justify-content: space-between; /* Espaciado entre enlaces y carrito */
-    align-items: center; /* Alinear elementos verticalmente */
-    padding: 0 1em; /* Espaciado lateral */
+    justify-content: space-between;  /* Distribuir los elementos entre los extremos */
+    align-items: center;  /* Alinear los elementos verticalmente */
+    padding: 1em;
+    background-color: #333;  /* Fondo oscuro */
+    color: white;
 }
 
-nav ul {
-    list-style: none;
+.logo a {
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links {
     display: flex;
-    gap: 20px; /* Espaciado entre enlaces */
+    list-style: none;
     margin: 0;
     padding: 0;
 }
 
-nav ul li {
-    margin: 0;
+.nav-links li {
+    margin-left: 20px;
 }
 
-nav ul li a {
+.nav-links li a {
     color: white;
     text-decoration: none;
-    padding: 10px 15px;
-    display: block;
+    font-size: 1em;
+    padding: 8px 16px;
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
     background-color: #555;
     border-radius: 4px;
 }
 
+/* Estilo del botón del carrito */
 .btn-carrito {
-    display: flex;
-    align-items: center; /* Asegura que el ícono y el número estén centrados */
     background: none;
     border: none;
+    font-size: 20px;
+    color: white;
     cursor: pointer;
     position: relative;
 }
 
 .btn-carrito i {
     font-size: 24px;
-    color: white;
 }
 
 .btn-carrito span {
     position: absolute;
     top: -5px;
     right: -10px;
-    background: red;
+    background-color: red;
     color: white;
     border-radius: 50%;
-    padding: 2px 6px;
+    padding: 2px 8px;
     font-size: 14px;
 }
 
+/* Estilos para el botón de hamburguesa */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
 
 main {
     padding: 1em;
@@ -252,15 +269,29 @@ button:hover {
     background-color: #555;
 }
 
-/* Diseño responsivo */
+
+/* Diseño responsivo para pantallas pequeñas */
 @media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin: 5px 0;
+    .menu-toggle {
+        display: block;  /* Muestra el botón de hamburguesa en pantallas pequeñas */
+    }
+    .nav-links {
+        display: none;  /* Esconde los enlaces en pantallas pequeñas */
+        flex-direction: column;
+        gap: 1em;
     }
 
-    .productos-container, .reseñas-grid, form {
-        padding: 0 1em;
+    nav {
+        flex-direction: column;  /* Coloca los elementos en columna */
+    }
+
+    .nav-links.active {
+        display: flex;  /* Muestra los enlaces cuando el menú está activo */
+    }
+
+    .nav-links li {
+        margin-left: 0;  /* Elimina el margen entre los enlaces */
+        text-align: center;  /* Centra los enlaces */
     }
 }
 
