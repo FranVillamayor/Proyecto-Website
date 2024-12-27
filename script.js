@@ -127,3 +127,38 @@ document.addEventListener("DOMContentLoaded", () => {
     cargarProductos(); // Llamar al cargar la página
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const abrirCarritoBtn = document.getElementById("abrir-carrito");
+    const cantidadCarrito = document.getElementById("cantidad-carrito");
+
+    // Mostrar cantidad en el carrito
+    function actualizarCantidadCarrito() {
+        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        const totalCantidad = carrito.reduce((sum, producto) => sum + producto.cantidad, 0);
+        cantidadCarrito.textContent = `(${totalCantidad})`;
+    }
+
+    // Abrir el modal del carrito
+    abrirCarritoBtn.addEventListener("click", () => {
+        const modalCarrito = document.getElementById("modal-carrito");
+        mostrarCarritoModal();
+        modalCarrito.style.display = "block";
+    });
+
+    actualizarCantidadCarrito(); // Llamada inicial
+});
+
+function agregarAlCarrito(productoId) {
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    const productoEnCarrito = carrito.find((producto) => producto.id == productoId);
+
+    if (productoEnCarrito) {
+        productoEnCarrito.cantidad++;
+    } else {
+        const producto = productos.find((p) => p.id == productoId);
+        carrito.push({ ...producto, cantidad: 1 });
+    }
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    actualizarCantidadCarrito();
+}
