@@ -3,6 +3,9 @@ body {
     font-family: "Ubuntu", sans-serif;
     font-weight: 400;
     font-style: normal;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
 }
 
 #inicio {
@@ -51,6 +54,7 @@ nav ul li a:hover {
     background-color: #555;
     border-radius: 4px;
 }
+
 .btn-carrito {
     background: none;
     border: none;
@@ -97,6 +101,16 @@ main {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: aparecer 0.5s ease forwards;
+}
+
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .producto-card:hover {
@@ -117,7 +131,7 @@ main {
 
 .producto-card p {
     font-size: 14px;
-    color: #666;
+    color: #444;
 }
 
 .producto-card button {
@@ -135,6 +149,37 @@ main {
     background-color: #45a049;
 }
 
+/* Modal del carrito */
+#modal-carrito {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    width: 90%;
+    max-width: 500px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Botones del carrito */
+.carrito-item button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.carrito-item button:hover {
+    background-color: #0056b3;
+}
+
 /* Sección Reseñas */
 #reseñas {
     padding: 2em 0;
@@ -147,11 +192,12 @@ main {
 }
 
 .reseña-item {
-    background: #fff;
+    background: linear-gradient(to bottom, #ffffff, #f7f7f7);
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 1em;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Sección Contacto */
@@ -191,7 +237,7 @@ button:hover {
     background-color: #555;
 }
 
-/* Diseño responsivo con Media Queries */
+/* Diseño responsivo */
 @media (max-width: 768px) {
     nav ul li {
         display: block;
@@ -204,8 +250,25 @@ button:hover {
 }
 
 @media (max-width: 576px) {
+    body {
+        font-size: 14px;
+    }
+
     .producto-card, .reseña-item {
         width: 100%;
+    }
+
+    .producto-card {
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    input, textarea {
+        font-size: 14px;
     }
 }
 
