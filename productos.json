@@ -4,20 +4,23 @@
         "nombre": "Ford Falcon",
         "imagen": "assets/fordFalcon.png",
         "descripcion": "Un clásico del automovilismo argentino, confiable y potente.",
-        "precio": 12000
+        "precio": 12000,
+        "cantidad": 1 
     },
     {
         "id": 2,
         "nombre": "Peugeot 504",
         "imagen": "assets/peugeot504.png",
         "descripcion": "Elegancia y confort, un vehículo que marcó historia.",
-        "precio": 15000
+        "precio": 15000,
+        "cantidad": 1 
     },
     {
         "id": 3,
         "nombre": "Renault R12",
         "imagen": "assets/R12.png",
         "descripcion": "Un modelo robusto y versátil, ideal para la familia.",
-        "precio": 10000
+        "precio": 10000,
+        "cantidad": 1 
     }
 ]
