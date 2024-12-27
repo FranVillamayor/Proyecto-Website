@@ -13,9 +13,9 @@ body {
 }
 
 #inicio img {
-    width: 100%;         /* Hace que la imagen ocupe el 100% del ancho del contenedor */
-    height: auto;        /* Mantiene la proporción original de la imagen */
-    display: block;     /* Elimina el espacio blanco debajo de la imagen */
+    width: 100%;
+    height: auto;
+    display: block;
     margin: 0;
     padding: 0; 
 }
@@ -27,13 +27,13 @@ header, nav, footer {
     text-align: center;
     padding: 1em;
 }
+
 /* Estilos para la navegación */
 nav ul {
-    list-style: none;  /* Quita los puntos de la lista */
-    display: flex;     /* Muestra los elementos en fila */
+    list-style: none;
+    display: flex;
     justify-content: center;
     padding: 0;
-    background-color: #333;
 }
 
 nav ul li {
@@ -71,12 +71,50 @@ main {
 }
 
 .producto-card {
-    background: white;
-    border: 2px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 1em;
-    width: 300px;
+    padding: 15px;
+    margin: 15px;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.producto-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.producto-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.producto-card h3 {
+    font-size: 20px;
+    color: #333;
+}
+
+.producto-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.producto-card button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.producto-card button:hover {
+    background-color: #45a049;
 }
 
 /* Sección Reseñas */
@@ -141,12 +179,9 @@ button:hover {
         display: block;
         margin: 5px 0;
     }
-    
+
     .productos-container, .reseñas-grid, form {
         padding: 0 1em;
-    }
-    #contacto{
-        background-color: red;
     }
 }
 
@@ -154,13 +189,5 @@ button:hover {
     .producto-card, .reseña-item {
         width: 100%;
     }
-    #contacto{
-        background-color: aqua;
-    }
 }
 
-@media(min-width: 1000px){
-    #contacto{
-        background-color: grey;
-    }
-}
