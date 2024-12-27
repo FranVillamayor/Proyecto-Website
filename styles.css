@@ -32,15 +32,23 @@ header, nav, footer {
 }
 
 /* Estilos para la navegación */
+nav {
+    display: flex;
+    justify-content: space-between; /* Espaciado entre enlaces y carrito */
+    align-items: center; /* Alinear elementos verticalmente */
+    padding: 0 1em; /* Espaciado lateral */
+}
+
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    gap: 20px; /* Espaciado entre enlaces */
+    margin: 0;
     padding: 0;
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin: 0;
 }
 
 nav ul li a {
@@ -56,9 +64,10 @@ nav ul li a:hover {
 }
 
 .btn-carrito {
+    display: flex;
+    align-items: center; /* Asegura que el ícono y el número estén centrados */
     background: none;
     border: none;
-    font-size: 18px;
     cursor: pointer;
     position: relative;
 }
@@ -79,18 +88,6 @@ nav ul li a:hover {
     font-size: 14px;
 }
 
-.carrito-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 10px 0;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-}
-
-.carrito-item img {
-    border-radius: 5px;
-}
 
 main {
     padding: 1em;
